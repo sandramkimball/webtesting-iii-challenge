@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 import Controls from './Controls';
 
 test('Does Controls render?', ()=> {
@@ -7,13 +7,11 @@ test('Does Controls render?', ()=> {
 });
 
 //Test if Default Open
-// test('Is door default open?', async ()=>{
-//     const{getByText} = render(<Controls/>);
-//     const defaultOpen = getByText(/open gate/i)
-//     expect(defaultOpen).toBeTruthy();
+test('Is door default open?', async ()=>{
+    const{findByText} = render(<Controls/>);
+    const defaultOpen = findByText(/open gate/i)
+    expect(defaultOpen).toBeTruthy();
+});
 
-//     const button = getByText(/close gate/i);
-//     await fireEvent.click(button);
-//     expect(getByText)(/open gate/i)
-// })
+
 
