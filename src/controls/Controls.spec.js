@@ -1,10 +1,9 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import Controls from './Controls';
 
-//Text Render
-test('Controls render correctly:', ()=> {
-    expect(render(<Controls />)).toMatchSnapshot();
+test('Does Controls render?', ()=> {
+    render(<Controls />)
 });
 
 //Test if Default Open
